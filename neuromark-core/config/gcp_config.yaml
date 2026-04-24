@@ -1,0 +1,14 @@
+project_id: "google-ai-challenge-2026-neuromark"
+region: "us-central1"
+
+vertex_ai:
+  endpoint_name: "neuromark-prediction-endpoint"
+  model_id: "neuromark_adversarial_v1"
+
+storage:
+  raw_bucket: "gs://neuromark-raw-assets"
+  processed_bucket: "gs://neuromark-protected-assets"
+
+celery:
+  broker_url: "redis://redis-server:6379/0"
+  result_backend: "redis://redis-server:6379/0"

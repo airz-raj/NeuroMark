@@ -1,0 +1,10 @@
+# macOS metadata
+.DS_Store
+
+# Python caches
+**/__pycache__/
+**/*.py[cod]
+
+# Frontend dependencies/build outputs
+**/node_modules/
+**/.next/

@@ -1,0 +1,20 @@
+# Core API
+fastapi>=0.103.1,<0.104.0
+uvicorn[standard]>=0.23.2,<0.24.0
+pydantic>=2.4.2,<2.5.0
+python-multipart==0.0.6
+
+# Cloud & Task Queue
+celery==5.3.4
+redis==5.0.0
+google-cloud-storage==2.10.0
+google-cloud-aiplatform>=1.33.0,<2.0.0
+
+# Deep Learning & Processing
+opencv-python-headless>=4.8.0
+Pillow>=10.0.1
+tensorflow>=2.14.0
+
+# Enterprise Logging & CLI
+rich>=13.6.0
+loguru>=0.7.2

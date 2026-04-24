@@ -1,0 +1,18 @@
+# Python caches
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store
+
+# Python environments
+.venv/
+venv/
+
+# JS dependencies/build
+node_modules/
+.next/
+
+# Logs and temp
+*.log
+*.tmp
