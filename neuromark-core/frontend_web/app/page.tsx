@@ -16,6 +16,8 @@ const mockChartData = [
   { time: '70ms', confidence: 0.92, psnr: 38 }
 ];
 
+const API_BASE = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/$/, '');
+
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('threat-lab');
   const [isScanning, setIsScanning] = useState(false);
@@ -55,7 +57,7 @@ export default function Dashboard() {
 
   const loadHistory = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/v1/history');
+      const res = await fetch(`${API_BASE}/api/v1/history`);
       if (res.ok) {
         const rows = await res.json();
         setHistory(rows);
@@ -91,7 +93,7 @@ export default function Dashboard() {
     formData.append('file', file);
     
     try {
-      const res = await fetch('http://localhost:8000/api/v1/verify', {
+      const res = await fetch(`${API_BASE}/api/v1/verify`, {
         method: 'POST',
         headers: { 'Authorization': 'Bearer valid-token' },
         body: formData
@@ -124,7 +126,7 @@ export default function Dashboard() {
 
   const handleKmsConnect = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/v1/kms/connect');
+      const res = await fetch(`${API_BASE}/api/v1/kms/connect`);
       setIsConnected(res.ok);
     } catch {
       setIsConnected(false);
@@ -137,7 +139,7 @@ export default function Dashboard() {
     try {
       const formData = new FormData();
       formData.append('file', selectedFile);
-      const res = await fetch('http://localhost:8000/api/v1/protect', {
+      const res = await fetch(`${API_BASE}/api/v1/protect`, {
         method: 'POST',
         headers: { 'Authorization': 'Bearer valid-token' },
         body: formData,
