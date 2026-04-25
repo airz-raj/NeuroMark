@@ -49,11 +49,7 @@ make train
 make api
 ```
 
-**4. Generate a Demo Pitch Video**
+**4. Start The Web App
 ```bash
-make demo
+make dev
 ```
-
-## 📜 Contributing
-We follow the standard GitHub Flow. Please include unit tests and keep code covered.
-See `CONTRIBUTING.md` (soon) for details.
